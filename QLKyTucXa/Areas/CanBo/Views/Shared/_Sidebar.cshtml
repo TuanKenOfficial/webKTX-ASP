@@ -1,0 +1,18 @@
+﻿<div id="sidebar">
+    <a href="#" class="visible-phone"><i class="icon icon-home"></i> Quản lý </a><ul>
+        <li><i class="icon icon-th-list"></i> <span>@Html.ActionLink("Cán bộ", "Index", "CANBOes")</span></li>
+        <li><i class="icon icon-th-list"></i> <span>@Html.ActionLink("Phòng", "Index", "PHONGs")</span></li>
+        <li><i class="icon icon-th-list"></i> <span>@Html.ActionLink("Nhân viên", "Index", "NHANVIENs")</span></li>
+        <li class="submenu">
+            <a href="#"><i class="icon icon-th-list"></i> <span>Quản Lý Hóa Đơn</span> <span class="label label-important">4</span></a>
+            <ul>
+                <li>@Html.ActionLink("Đơn giá", "Index", "DONGIAs")</li>
+                <li>@Html.ActionLink("Hóa đơn", "Index", "HOADONs")</li>
+                <li>@Html.ActionLink("Công tơ điện", "Index", "CONGTODIENs")</li>
+                <li>@Html.ActionLink("Công tơ nước", "Index", "CONGTONUOCs")</li>
+            </ul>
+        </li>
+        <li><i class="icon icon-th-list"></i> <span>@Html.ActionLink("Hỗ trợ", "Index", "HOTROes")</span></li>
+        <li><i class="icon icon-th-list"></i> <span>@Html.ActionLink("Lịch sử Chuyển phòng", "Index", "LICH_SU")</span></li>
+    </ul>
+</div>
