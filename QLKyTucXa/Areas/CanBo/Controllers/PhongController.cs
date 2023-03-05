@@ -22,6 +22,16 @@ namespace QLKyTucXa.Areas.CanBo.Controllers
         {
             try
             {
+                var chk = db.PHONGs.Where(x => x.TAIKHOAN == taiKhoan).Count() == 0;
+                var chk1 = db.PHONGs.Where(x => x.MAPHONG == maPhong).Count() == 0;
+                if (!chk)
+                {
+                    return Json(new { code = 300, msg = "Tài khoản phòng này đã tồn tại trong hệ thống!" }, JsonRequestBehavior.AllowGet);
+                }
+                if (!chk1)
+                {
+                    return Json(new { code = 301, msg = "Mã phòng này đã tồn tại trong hệ thống!" }, JsonRequestBehavior.AllowGet);
+                }
                 var p = new PHONG();
                 var encryptedMd5Pas = Encryptor.MD5Hash(matKhau);
 

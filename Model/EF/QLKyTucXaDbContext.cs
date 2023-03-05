@@ -17,7 +17,8 @@ namespace Model.EF
         public virtual DbSet<CONGTONUOC> CONGTONUOCs { get; set; }
         public virtual DbSet<DAYPHONG> DAYPHONGs { get; set; }
         public virtual DbSet<DONGIA> DONGIAs { get; set; }
-        public virtual DbSet<HOADON> HOADONs { get; set; }
+        public virtual DbSet<HOADON_DIENNUOC> HOADON_DIENNUOC { get; set; }
+        public virtual DbSet<HOADON_PHONG> HOADON_PHONG { get; set; }
         public virtual DbSet<HOTRO> HOTROes { get; set; }
         public virtual DbSet<LICH_SU> LICH_SU { get; set; }
         public virtual DbSet<NHANVIEN> NHANVIENs { get; set; }
@@ -50,7 +51,7 @@ namespace Model.EF
                 .IsUnicode(false);
 
             modelBuilder.Entity<CANBO>()
-                .HasMany(e => e.HOADONs)
+                .HasMany(e => e.HOADON_DIENNUOC)
                 .WithRequired(e => e.CANBO)
                 .WillCascadeOnDelete(false);
 
@@ -68,17 +69,9 @@ namespace Model.EF
                 .IsUnicode(false);
 
             modelBuilder.Entity<DONGIA>()
-                .HasMany(e => e.HOADONs)
+                .HasMany(e => e.HOADON_DIENNUOC)
                 .WithRequired(e => e.DONGIA)
                 .WillCascadeOnDelete(false);
-
-            modelBuilder.Entity<LICH_SU>()
-                .Property(e => e.MAPHONGCU)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<LICH_SU>()
-                .Property(e => e.MAPHONGMOI)
-                .IsUnicode(false);
 
             modelBuilder.Entity<NHANVIEN>()
                 .Property(e => e.MANV)
@@ -124,7 +117,12 @@ namespace Model.EF
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<PHONG>()
-                .HasMany(e => e.HOADONs)
+                .HasMany(e => e.HOADON_DIENNUOC)
+                .WithRequired(e => e.PHONG)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<PHONG>()
+                .HasMany(e => e.HOADON_PHONG)
                 .WithRequired(e => e.PHONG)
                 .WillCascadeOnDelete(false);
 

@@ -12,7 +12,7 @@ namespace Model.EF
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public DONGIA()
         {
-            HOADONs = new HashSet<HOADON>();
+            HOADON_DIENNUOC = new HashSet<HOADON_DIENNUOC>();
         }
 
         [Key]
@@ -26,13 +26,13 @@ namespace Model.EF
 
         public double DONGIANUOC { get; set; }
 
-        public bool? TRANGTHAI { get; set; }
+        public bool TRANGTHAI { get; set; }
 
         public DateTime NGAYAPDUNG { get; set; }
 
         public bool? DAXOA { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<HOADON> HOADONs { get; set; }
+        public virtual ICollection<HOADON_DIENNUOC> HOADON_DIENNUOC { get; set; }
     }
 }

@@ -14,12 +14,6 @@ namespace Model.EF
 
         public int ID_PHONG { get; set; }
 
-        [StringLength(10)]
-        public string MAPHONGCU { get; set; }
-
-        [StringLength(10)]
-        public string MAPHONGMOI { get; set; }
-
         public DateTime? NGAYCHUYEN { get; set; }
 
         public virtual NHANVIEN NHANVIEN { get; set; }

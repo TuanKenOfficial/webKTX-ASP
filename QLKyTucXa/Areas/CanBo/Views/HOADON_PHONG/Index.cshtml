@@ -1,0 +1,62 @@
+﻿@model IEnumerable<Model.EF.HOADON_PHONG>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/CanBo/Views/Shared/_Layout2.cshtml";
+}
+
+@section header{
+    Quản Lý Danh Sách Hóa Đơn Phòng
+}
+
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="span12">
+            <div class="widget-box">
+                <div class="widget-title">
+                    <span class="icon"><i class="icon-th"></i></span>
+                    <h5>Danh Sách Hóa Đơn Phòng</h5>
+                </div>
+                <div class="widget-content nopadding">
+                    <table class="table table-bordered data-table">
+                        <thead>
+                            <tr>
+                                <th>Dãy Phòng</th>
+                                <th>Mã Phòng</th>
+                                <th>Kỳ</th>
+                                <th>Năm</th>
+                                <th>Trạng Thái</th>
+                                <th><div class="fr"><p class="btn btn-primary btn-mini">@Html.ActionLink("Thêm mới", "TaoHoaDonPhong")</p></div></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr class="gradeX">
+                                    <td>@Html.DisplayFor(modelItem => item.PHONG.DAYPHONG.MADAYPHONG)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.PHONG.MAPHONG)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.KY)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.NAM)</td>
+                                    <td>
+                                        @{
+                                            int? temp = item.TRANGTHAI;
+                                        }
+                                        @if (temp == 0)
+                                        {
+                                            <p>Chưa thu tiền</p>
+                                        }
+                                        else if (temp == 1)
+                                        {
+                                            <p>Đã thu tiền</p>
+                                        }
+                                    </td>
+                                    <td><div class="fr"><p class="btn btn-warning btn-mini">@Html.ActionLink("Chỉnh sửa", "Edit", new { id = item.ID_HOADON_PHONG })</p> @*| <p class="btn btn-success btn-mini">@Html.ActionLink("Chi tiết", "Details", new { id = item.ID_HOADON_PHONG })</p> | <p class="btn btn-danger btn-mini">@Html.ActionLink("Xóa", "Delete", new { id = item.ID_HOADON_PHONG })</p>*@</div></td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

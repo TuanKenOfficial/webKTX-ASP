@@ -12,7 +12,7 @@ namespace Model.EF
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public CANBO()
         {
-            HOADONs = new HashSet<HOADON>();
+            HOADON_DIENNUOC = new HashSet<HOADON_DIENNUOC>();
         }
 
         [Key]
@@ -54,9 +54,9 @@ namespace Model.EF
 
         public bool QUANTRI { get; set; }
 
-        public bool DAXOA { get; set; }
+        public bool? DAXOA { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<HOADON> HOADONs { get; set; }
+        public virtual ICollection<HOADON_DIENNUOC> HOADON_DIENNUOC { get; set; }
     }
 }

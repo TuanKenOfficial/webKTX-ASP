@@ -6,8 +6,7 @@ namespace Model.EF
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("HOADON")]
-    public partial class HOADON
+    public partial class HOADON_DIENNUOC
     {
         [Key]
         public int ID_HOADON { get; set; }
@@ -18,15 +17,11 @@ namespace Model.EF
 
         public int ID_DONGIA { get; set; }
 
-        public int THANG { get; set; }
+        public int? THANG { get; set; }
 
-        public int KI { get; set; }
+        public int? NAM { get; set; }
 
-        public int NAM { get; set; }
-
-        public bool TINHTRANG { get; set; }
-
-        public int TRANGTHAI { get; set; }
+        public int? TRANGTHAI { get; set; }
 
         public virtual CANBO CANBO { get; set; }
 

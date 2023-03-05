@@ -18,9 +18,9 @@ namespace Model.EF
         [Required]
         public string NOIDUNG { get; set; }
 
-        public DateTime NGAYGUI { get; set; }
+        public DateTime? NGAYGUI { get; set; }
 
-        public int TRANGTHAI { get; set; }
+        public int? TRANGTHAI { get; set; }
 
         public virtual PHONG PHONG { get; set; }
     }

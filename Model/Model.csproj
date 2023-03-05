@@ -57,7 +57,8 @@
     <Compile Include="EF\CONGTONUOC.cs" />
     <Compile Include="EF\DAYPHONG.cs" />
     <Compile Include="EF\DONGIA.cs" />
-    <Compile Include="EF\HOADON.cs" />
+    <Compile Include="EF\HOADON_DIENNUOC.cs" />
+    <Compile Include="EF\HOADON_PHONG.cs" />
     <Compile Include="EF\HOTRO.cs" />
     <Compile Include="EF\LICH_SU.cs" />
     <Compile Include="EF\NHANVIEN.cs" />

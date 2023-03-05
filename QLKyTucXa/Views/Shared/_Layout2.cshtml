@@ -17,14 +17,13 @@
 <body>
 
     <div id="header">
-        <h1><a href="dashboard.html">Hệ thống quản lý - Ký túc xá</a></h1>
+        <h1>@Html.ActionLink("Hệ thống quản lý - Ký túc xá", "Index", "Home")</h1>
     </div>
 
     <div class="btn-group rightzero"> <a class="top_message tip-left" title="Manage Files"><i class="icon-file"></i></a> <a class="top_message tip-bottom" title="Manage Users"><i class="icon-user"></i></a> <a class="top_message tip-bottom" title="Manage Comments"><i class="icon-comment"></i><span class="label label-important">5</span></a> <a class="top_message tip-bottom" title="Manage Orders"><i class="icon-shopping-cart"></i></a> </div>
 
     <div id="user-nav" class="navbar navbar-inverse">
         <ul class="nav">
-            <li class=""><a title="" href="/Home/fileUser"><i class="icon icon-user"></i> <span class="text">Hồ sơ</span></a></li>
             <li>@Html.ActionLink("Đăng xuất", "LogoutPhong", "LoginPhong")</li>
         </ul>
     </div>

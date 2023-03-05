@@ -333,6 +333,15 @@
                             alert(data.msg);
                             LoadDsCanbo(tuKhoa, trang);
                             $('#modalReset').modal('hide');
+                        } else if (data.code == 300) {
+                            alert(data.msg);
+                            //console.log(data.msg);
+                        } else if (data.code == 501) {
+                            alert(data.msg);
+                            //console.log(data.msg);
+                        } else if (data.code == 500) {
+                            alert(data.msg);
+                            //console.log(data.msg);
                         }
                     }
                 })
@@ -398,6 +407,10 @@
                             $('#email').val('');
                             $('#sdt').val('');
                             //$('#quanTri').prop('checked', false);
+                        } else if (data.code == 300) {
+                            alert(data.msg);
+                        } else if (data.code == 301) {
+                            alert(data.msg);
                         }
                     }
                 });

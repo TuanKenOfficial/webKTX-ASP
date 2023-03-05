@@ -14,7 +14,8 @@ namespace Model.EF
         {
             CONGTODIENs = new HashSet<CONGTODIEN>();
             CONGTONUOCs = new HashSet<CONGTONUOC>();
-            HOADONs = new HashSet<HOADON>();
+            HOADON_DIENNUOC = new HashSet<HOADON_DIENNUOC>();
+            HOADON_PHONG = new HashSet<HOADON_PHONG>();
             HOTROes = new HashSet<HOTRO>();
             LICH_SU = new HashSet<LICH_SU>();
         }
@@ -36,15 +37,15 @@ namespace Model.EF
         [StringLength(50)]
         public string MATKHAU { get; set; }
 
-        public int SOLUONGNV { get; set; }
+        public int? SOLUONGNV { get; set; }
 
-        public double DONGIA { get; set; }
+        public double? DONGIA { get; set; }
 
-        public int TINHTRANG { get; set; }
+        public int? TINHTRANG { get; set; }
 
-        public bool TRANGTHAI { get; set; }
-
-        [StringLength(80)]
+        public bool? TRANGTHAI { get; set; }
+        [Required]
+        [StringLength(50)]
         public string MOTAKHAC { get; set; }
 
         public bool? DAXOA { get; set; }
@@ -58,7 +59,10 @@ namespace Model.EF
         public virtual DAYPHONG DAYPHONG { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<HOADON> HOADONs { get; set; }
+        public virtual ICollection<HOADON_DIENNUOC> HOADON_DIENNUOC { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<HOADON_PHONG> HOADON_PHONG { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<HOTRO> HOTROes { get; set; }

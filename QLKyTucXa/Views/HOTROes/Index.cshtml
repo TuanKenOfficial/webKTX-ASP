@@ -40,7 +40,7 @@
                                     <td>@Html.DisplayFor(modelItem => item.NGAYGUI)</td>
                                     <td>
                                         @{
-                                            int temp = item.TRANGTHAI;
+                                            int? temp = item.TRANGTHAI;
                                         }
                                         @if (temp == 0)
                                         {

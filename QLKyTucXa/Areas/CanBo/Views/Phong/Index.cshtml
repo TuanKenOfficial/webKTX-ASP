@@ -92,7 +92,13 @@
                         </div>
                         <div class="form-group">
                             <label>Tình trạng(<span class="text-danger">*</span>):</label>
-                            <input type="number" class="form-control" id="tinhTrang" placeholder="Tình trạng">
+                            <select class="form-control" name="tinhTrang" id="tinhTrang">
+                                <option value="0" selected>Còn trống</option>
+                                <option value="1">1 người ở</option>
+                                <option value="2">2 người ở</option>
+                                <option value="3">3 người ở</option>
+                                <option value="4">4 người ở</option>
+                            </select>
                         </div>
                         <div class="form-group">
                             <label>Trạng thái(<span class="text-danger">*</span>):</label>
@@ -430,6 +436,10 @@
                             $('#donGia').val('');
                             $('#tinhTrang').val('');
                             $('#trangThai').val('');
+                        } else if (data.code == 300) {
+                            alert(data.msg);
+                        } else if (data.code == 301) {
+                            alert(data.msg);
                         }
                     },
                     error: function (err) {
@@ -491,7 +501,7 @@
                             tr += '<td>' + p.TAIKHOAN + '</td>';
                             tr += '<td>' + p.SOLUONGNV + '</td>';
                             tr += '<td>' + p.DONGIA + '</td>';
-                            tr += '<td>' + p.TINHTRANG + '</td>';
+                            tr += '<td>' + (p.TINHTRANG == 0 ? 'Còn trống' : 'Có người ở') + '</td>';
 
                             tr += '<td class = "text-right text-nowrap">';
                             tr += '<button class = "btn btn-xs btn-info" name = "view"><i class="fa fa-info-circle" aria-hidden="true"></i></button>&nbsp;';

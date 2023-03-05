@@ -109,6 +109,16 @@ namespace QLKyTucXa.Areas.CanBo.Controllers
         {
             try
             {
+                var chk = db.CANBOes.Where(x => x.TAIKHOAN == taiKhoan).Count() == 0;
+                var chk1 = db.CANBOes.Where(x => x.MACB == maCB).Count() == 0;
+                if (!chk)
+                {
+                    return Json(new { code = 300, msg = "Tài khoản cán bộ này đã tồn tại trong hệ thống!" }, JsonRequestBehavior.AllowGet);
+                }
+                if (!chk1)
+                {
+                    return Json(new { code = 301, msg = "Mã cán bộ này đã tồn tại trong hệ thống!" }, JsonRequestBehavior.AllowGet);
+                }
                 var cb = new CANBO();
                 var encryptedMd5Pas = Encryptor.MD5Hash(matKhau);
 
@@ -259,8 +269,11 @@ namespace QLKyTucXa.Areas.CanBo.Controllers
                     cb.MATKHAU = encryptedMd5Pas2;
                     db.SaveChanges();
                     return Json(new { code = 200, msg = "Thay đổi mật khẩu cán bộ thành công" }, JsonRequestBehavior.AllowGet);
+                } else if (encryptedMd5Pas != pass)
+                {
+                    return Json(new { code = 300, msg = "Bạn nhập sai mật khẩu hiện tại!" }, JsonRequestBehavior.AllowGet);
                 }
-                return Json(new { code = 501, msg = "Bạn nhập sai mật khẩu hiện tại!" }, JsonRequestBehavior.AllowGet);
+                return Json(new { code = 501, msg = "Bạn chưa nhập mật khẩu hiện tại!" }, JsonRequestBehavior.AllowGet);
             }
             catch (Exception ex)
             {

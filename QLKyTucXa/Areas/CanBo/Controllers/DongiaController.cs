@@ -63,6 +63,7 @@ namespace QLKyTucXa.Areas.CanBo.Controllers
                 dg.DONGIANUOC = donGianuoc;
                 dg.TRANGTHAI = trangThai;
                 dg.NGAYAPDUNG = ngayApdung;
+                dg.DAXOA = false;
 
                 db.DONGIAs.Add(dg);//them doi tuong don gia dc khai bao o phia tren
                 db.SaveChanges();//luu vao csdl
